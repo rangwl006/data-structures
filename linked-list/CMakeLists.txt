@@ -1,10 +1,7 @@
-cmake_minimum_required(VERSION 3.20)
-project(linked_list)
+add_library(LinkedList
+        src/node.cpp
+        src/linkedlist.cpp
+        src/singlylinkedlist.cpp)
 
-set(CMAKE_CXX_STANDARD 14)
-
-add_subdirectory(linked-list)
-
-add_executable(linked_list main.cpp)
-
-target_link_libraries(${PROJECT_NAME} PUBLIC LinkedList)
+target_include_directories(LinkedList PUBLIC
+        include)
