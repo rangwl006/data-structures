@@ -10,24 +10,42 @@
 #include "singlylinkedlist.h"
 #include "node.h"
 
+#include "tree.h"
+#include "leaf.h"
+
 int main()
 {
-    auto singleLink = new SinglyLinkedList<char>('a');
-    singleLink->append('b');
-    singleLink->append('c');
-    singleLink->show();
+//    auto singleLink = new SinglyLinkedList<char>('a');
+//    singleLink->append('b');
+//    singleLink->append('c');
+//    singleLink->show();
+//
+//    singleLink->deleteAt(1);
+//    singleLink->show();
+//
+//    auto d = new Node<char>();
+//    d->data = 'd';
+//    singleLink->append(*d);
+//    singleLink->show();
+//
+//    singleLink->insertBefore('e', 5);
+//    singleLink->show();
+//    delete singleLink;
 
-    singleLink->deleteAt(1);
-    singleLink->show();
+    auto L = new Leaf<int>();
+    L->setData(1);
+    std::cout << "is L root?: " << L->isRoot() << std::endl;
 
-    auto d = new Node<char>();
-    d->data = 'd';
-    singleLink->append(*d);
-    singleLink->show();
+    auto L2 = new Leaf<int>();
+    L2->setData(2);
+    L2->setParent(L);
+    L->setChildren(L2);
 
-    singleLink->insertBefore('e', 5);
-    singleLink->show();
-    delete singleLink;
+    auto L3 = new Leaf<int>();
+    L3->setData(3);
+    L3->setParent(L2);
+    L2->setChildren(L3);
 
+    delete L2;
     return 0;
 }

@@ -5,8 +5,15 @@
 #ifndef LINKED_LIST_TREE_H
 #define LINKED_LIST_TREE_H
 
+#include "leaf.h"
 
-class tree {
+template <typename T>
+class Tree {
+
+public:
+    virtual void insert(T data) = 0;
+    virtual void show() = 0;
+    virtual bool isEmpty() = 0;
 
 };
 
