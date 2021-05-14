@@ -14,7 +14,6 @@ class Bst: public Tree<T>  {
 public:
     Bst();
     ~Bst();
-
     void insert(T data) override;
     void show() override;
     bool isEmpty() override;
